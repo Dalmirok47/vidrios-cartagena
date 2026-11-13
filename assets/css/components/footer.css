@@ -1,0 +1,8 @@
+﻿.footer { background: var(--silver-900); color: var(--silver-200); padding: 2rem 0; font-size: .9rem; }
+.footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; }
+.wa-float {
+  position: fixed; right: 20px; bottom: 20px; z-index: 90; padding: .8rem 1.3rem;
+  border-radius: 999px; color: #fff; font-weight: 600; background: #25d366;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, .45); animation: pulse 2.4s infinite; transition: var(--transition);
+}
+.wa-float:hover { transform: translateY(-4px) scale(1.05); }

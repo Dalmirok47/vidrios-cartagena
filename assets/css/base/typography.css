@@ -1,0 +1,14 @@
+﻿h1, h2, h3 { line-height: 1.15; font-weight: 700; }
+h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); margin-bottom: 1rem; }
+h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: .75rem; }
+h3 { font-size: 1.2rem; margin-bottom: .5rem; }
+.eyebrow {
+  display: inline-block; font-size: .8rem; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--sky-700); margin-bottom: .75rem;
+}
+.muted, .section-head p { color: var(--silver-600); }
+.section-head { text-align: center; max-width: 640px; margin: 0 auto 3rem; }
+.gradient-text {
+  background: linear-gradient(135deg, var(--sky-500), var(--sky-700));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
