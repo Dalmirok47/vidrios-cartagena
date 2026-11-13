@@ -1,0 +1,19 @@
+﻿:root {
+  /* Gris plateado */
+  --silver-50:  #f5f7f9;
+  --silver-200: #dfe4e9;
+  --silver-400: #b8c1cb;
+  --silver-600: #8793a0;
+  --silver-900: #2b323a;
+
+  /* Azul cielo */
+  --sky-300: #8fd3f4;
+  --sky-500: #38b6f0;
+  --sky-700: #1a8ac4;
+
+  --gradient-main: linear-gradient(135deg, var(--sky-300), var(--sky-500));
+  --glass: rgba(255, 255, 255, 0.55);
+  --blur: blur(14px);
+  --radius: 16px;
+  --transition: 0.35s cubic-bezier(.4, 0, .2, 1);
+}
