@@ -7,5 +7,7 @@
 @import "components/hero.css";
 @import "components/gallery.css";
 @import "components/footer.css";
+@import "components/catalog.css";
+@import "components/product.css";
 @import "animations.css";
 @import "responsive.css";

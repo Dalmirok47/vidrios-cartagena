@@ -1,0 +1,102 @@
+[
+  {
+    "id": "PU-001", "categoria": "puertas",
+    "nombre": "Puerta batiente en cristal templado",
+    "descripcion": "Elegante y segura, ideal para oficinas y locales comerciales. Su diseño limpio deja pasar la luz y se adapta a distintos estilos.",
+    "material": "Vidrio templado 10 mm con herrajes en acero inoxidable",
+    "medidas": { "ancho": "90 cm", "alto": "210 cm" },
+    "colores": ["Transparente", "Bronce", "Gris humo"],
+    "especificaciones": [["Espesor del vidrio", "10 mm"], ["Tipo de apertura", "Batiente"], ["Herrajes", "Acero inoxidable"], ["Uso", "Interior y exterior"]],
+    "imagenes": []
+  },
+  {
+    "id": "PU-002", "categoria": "puertas",
+    "nombre": "Puerta en aluminio moderna",
+    "descripcion": "Perfil resistente y acabado limpio para interiores y exteriores.",
+    "material": "Aluminio anodizado con vidrio laminado",
+    "medidas": { "ancho": "80 cm", "alto": "210 cm" },
+    "colores": ["Natural", "Negro", "Blanco"],
+    "especificaciones": [["Perfil", "Aluminio anodizado"], ["Vidrio", "Laminado"], ["Tipo de apertura", "Batiente"], ["Uso", "Interior y exterior"]],
+    "imagenes": []
+  },
+  {
+    "id": "VE-001", "categoria": "ventanas",
+    "nombre": "Ventana corrediza",
+    "descripcion": "Ahorra espacio y deja entrar la luz natural. Desplazamiento suave y cierre firme.",
+    "material": "Aluminio con vidrio de 6 mm",
+    "medidas": { "ancho": "120 cm", "alto": "100 cm" },
+    "colores": ["Natural", "Negro", "Blanco"],
+    "especificaciones": [["Espesor del vidrio", "6 mm"], ["Tipo de apertura", "Corrediza"], ["Hojas", "2"], ["Uso", "Interior y exterior"]],
+    "imagenes": []
+  },
+  {
+    "id": "VE-002", "categoria": "ventanas",
+    "nombre": "Ventana proyectante",
+    "descripcion": "Ventilación controlada y buen aislamiento del ruido.",
+    "material": "Aluminio con vidrio laminado",
+    "medidas": { "ancho": "80 cm", "alto": "60 cm" },
+    "colores": ["Natural", "Negro", "Blanco"],
+    "especificaciones": [["Vidrio", "Laminado"], ["Tipo de apertura", "Proyectante"], ["Uso", "Interior"]],
+    "imagenes": []
+  },
+  {
+    "id": "PV-001", "categoria": "puertas-ventanas",
+    "nombre": "Puerta ventana corrediza de 2 hojas",
+    "descripcion": "Conecta la sala con balcones y terrazas con una gran superficie de vidrio.",
+    "material": "Aluminio y vidrio templado 8 mm",
+    "medidas": { "ancho": "200 cm", "alto": "210 cm" },
+    "colores": ["Natural", "Negro", "Blanco"],
+    "especificaciones": [["Espesor del vidrio", "8 mm"], ["Tipo de apertura", "Corrediza"], ["Hojas", "2"], ["Uso", "Balcones y terrazas"]],
+    "imagenes": []
+  },
+  {
+    "id": "PV-002", "categoria": "puertas-ventanas",
+    "nombre": "Puerta ventana batiente",
+    "descripcion": "Apertura amplia y sellado hermético.",
+    "material": "Aluminio y vidrio templado 8 mm",
+    "medidas": { "ancho": "90 cm", "alto": "210 cm" },
+    "colores": ["Natural", "Negro", "Blanco"],
+    "especificaciones": [["Espesor del vidrio", "8 mm"], ["Tipo de apertura", "Batiente"], ["Hojas", "1"], ["Uso", "Balcones y patios"]],
+    "imagenes": []
+  },
+  {
+    "id": "DB-001", "categoria": "divisiones-bano",
+    "nombre": "División de baño corrediza",
+    "descripcion": "Práctica y fácil de limpiar para duchas y bañeras.",
+    "material": "Vidrio templado 8 mm y perfilería en aluminio",
+    "medidas": { "ancho": "120 cm", "alto": "190 cm" },
+    "colores": ["Transparente", "Satinado"],
+    "especificaciones": [["Espesor del vidrio", "8 mm"], ["Perfilería", "Aluminio"], ["Tipo de apertura", "Corrediza"], ["Uso", "Duchas y bañeras"]],
+    "imagenes": []
+  },
+  {
+    "id": "DB-002", "categoria": "divisiones-bano",
+    "nombre": "División de baño sin marco",
+    "descripcion": "Diseño minimalista que hace ver el baño más amplio.",
+    "material": "Vidrio templado 10 mm con herrajes en acero inoxidable",
+    "medidas": { "ancho": "90 cm", "alto": "190 cm" },
+    "colores": ["Transparente", "Satinado"],
+    "especificaciones": [["Espesor del vidrio", "10 mm"], ["Herrajes", "Acero inoxidable"], ["Tipo de apertura", "Batiente"], ["Uso", "Duchas"]],
+    "imagenes": []
+  },
+  {
+    "id": "DC-001", "categoria": "divisiones-cocina",
+    "nombre": "División de cocina fija",
+    "descripcion": "Separa ambientes sin perder luz ni amplitud.",
+    "material": "Vidrio templado 8 mm",
+    "medidas": { "ancho": "100 cm", "alto": "210 cm" },
+    "colores": ["Transparente", "Satinado"],
+    "especificaciones": [["Espesor del vidrio", "8 mm"], ["Instalación", "Panel fijo"], ["Uso", "Cocinas"]],
+    "imagenes": []
+  },
+  {
+    "id": "DC-002", "categoria": "divisiones-cocina",
+    "nombre": "División de cocina corrediza",
+    "descripcion": "Abre o cierra la cocina según lo necesites.",
+    "material": "Vidrio templado y perfilería en aluminio",
+    "medidas": { "ancho": "150 cm", "alto": "210 cm" },
+    "colores": ["Transparente", "Satinado"],
+    "especificaciones": [["Perfilería", "Aluminio"], ["Tipo de apertura", "Corrediza"], ["Uso", "Cocinas"]],
+    "imagenes": []
+  }
+]

@@ -1,9 +1,19 @@
-﻿import { initNavbar } from "./navbar.js";
+﻿import { renderLayout } from "./layout.js";
+import { initNavbar } from "./navbar.js";
 import { initReveal } from "./scroll-reveal.js";
+import { initCatalogo } from "./catalog.js";
+import { initProducto } from "./producto.js";
 import { initForm } from "./form.js";
 
-document.addEventListener("DOMContentLoaded", () => {
+function iniciar() {
+  const pagina = document.body.dataset.page;
+  renderLayout(pagina);
   initNavbar();
+  if (pagina === "home") initForm();
+  if (pagina === "catalogo") initCatalogo();
+  if (pagina === "producto") initProducto();
   initReveal();
-  initForm();
-});
+}
+
+if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", iniciar);
+else iniciar();

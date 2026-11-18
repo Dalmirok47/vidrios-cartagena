@@ -11,20 +11,9 @@
   <link rel="icon" type="image/png" href="assets/img/logo/favicon.png">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body>
+<body data-page="home">
 
-  <header class="navbar">
-    <div class="container nav-inner">
-      <a href="#inicio" class="logo"><img src="assets/img/logo/logo-icon.png" alt="" width="40" height="40"><span>Vidrios <span class="gradient-text">Cartagena</span></span></a>
-      <nav class="nav-links" aria-label="Principal">
-        <a href="#servicios">Servicios</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#contacto">Contacto</a>
-        <a href="#contacto" class="btn btn-primary btn-sm">Cotizar</a>
-      </nav>
-      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
-    </div>
-  </header>
+  <div id="site-header"></div>
 
   <main>
     <section id="inicio" class="hero">
@@ -37,7 +26,7 @@
           <p>Diseñamos e instalamos puertas, ventanas, puertas ventana y divisiones de baño y cocina con acabados modernos y duraderos.</p>
           <div class="hero-actions">
             <a href="#contacto" class="btn btn-primary">Solicitar cotización</a>
-            <a href="#servicios" class="btn btn-ghost">Ver servicios</a>
+            <a href="catalogo.html" class="btn btn-ghost">Ver catálogo</a>
           </div>
         </div>
         <div class="hero-visual reveal" data-delay="150">
@@ -46,34 +35,47 @@
       </div>
     </section>
 
-    <section id="servicios">
+    <section id="categorias">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">Servicios</span>
-          <h2>Lo que hacemos</h2>
-          <p>Soluciones en vidrio y aluminio para casas, apartamentos y locales comerciales.</p>
+          <span class="eyebrow">Catálogo</span>
+          <h2>Encuentra lo que necesitas</h2>
+          <p>Elige una categoría, revisa los diseños con sus medidas y materiales, y cotiza por WhatsApp.</p>
         </div>
         <div class="cards">
-          <article class="card reveal">
+          <a class="card reveal" href="catalogo.html?cat=puertas">
             <div class="icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="1"/><circle cx="15" cy="12" r="1"/></svg></div>
             <h3>Puertas</h3>
-            <p>Puertas de vidrio y aluminio para interiores y exteriores, seguras y elegantes.</p>
-          </article>
-          <article class="card reveal" data-delay="100">
+            <p>Vidrio y aluminio para interiores y exteriores.</p>
+            <span class="card-link">Ver puertas →</span>
+          </a>
+          <a class="card reveal" data-delay="100" href="catalogo.html?cat=ventanas">
             <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M12 3v18M3 12h18"/></svg></div>
             <h3>Ventanas</h3>
-            <p>Ventanas corredizas, batientes y fijas que dejan entrar la luz y aíslan el ruido.</p>
-          </article>
-          <article class="card reveal" data-delay="200">
+            <p>Corredizas, proyectantes y fijas.</p>
+            <span class="card-link">Ver ventanas →</span>
+          </a>
+          <a class="card reveal" data-delay="200" href="catalogo.html?cat=puertas-ventanas">
+            <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M12 3v18M8 12h.01M16 12h.01"/></svg></div>
+            <h3>Puertas-ventanas</h3>
+            <p>Grandes superficies de vidrio para balcones y terrazas.</p>
+            <span class="card-link">Ver puertas-ventanas →</span>
+          </a>
+          <a class="card reveal" data-delay="300" href="catalogo.html?cat=divisiones-bano">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 21V6a3 3 0 0 1 6 0M4 10h12v11M8 14v.01M12 14v.01M10 17v.01"/></svg></div>
             <h3>Divisiones de baño</h3>
-            <p>Mamparas en vidrio templado a la medida, fáciles de limpiar y muy resistentes.</p>
-          </article>
-          <article class="card reveal" data-delay="300">
+            <p>Mamparas en vidrio templado, fáciles de limpiar.</p>
+            <span class="card-link">Ver divisiones de baño →</span>
+          </a>
+          <a class="card reveal" data-delay="400" href="catalogo.html?cat=divisiones-cocina">
             <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M9 4v16M15 4v16"/></svg></div>
             <h3>Divisiones de cocina</h3>
-            <p>Separa ambientes sin perder amplitud ni luminosidad con paneles de vidrio.</p>
-          </article>
+            <p>Separa ambientes sin perder luz ni amplitud.</p>
+            <span class="card-link">Ver divisiones de cocina →</span>
+          </a>
+        </div>
+        <div class="center-cta reveal">
+          <a href="catalogo.html" class="btn btn-primary">Ver catálogo completo</a>
         </div>
       </div>
     </section>
@@ -118,12 +120,7 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <span>© 2026 Vidrios Cartagena. Todos los derechos reservados.</span>
-      <span>Puertas · Ventanas · Divisiones de baño y cocina</span>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
 
   <a href="https://wa.me/573000000000" class="wa-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">WhatsApp</a>
 
