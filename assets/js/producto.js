@@ -42,7 +42,7 @@ function mensajeCotizacion(p, color, medidas) {
   l.push(``);
   if (color) l.push(`• Color / acabado: ${color}`);
   l.push(`• Medidas requeridas: ${medidas.trim() || "por definir, necesito asesoría"}`);
-  l.push(``, `Quisiera conocer el valor y coordinar la forma de pago y el día de la visita. ¡Gracias!`);
+  l.push(``, `${p.agotado ? "Vi que está agotado. Quisiera saber cuándo estará disponible o si hay una alternativa. ¡Gracias!" : "Quisiera conocer el valor y coordinar la forma de pago y el día de la visita. ¡Gracias!"}`);
   return l.join("\n");
 }
 
@@ -116,7 +116,7 @@ export function initProducto() {
           <p class="nota">Si no las sabes, el asesor te orienta.</p>
         </div>
 
-        <a class="btn btn-primary btn-lg btn-block" id="cotizar" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+        ${p.agotado ? `<p class="aviso-agotado">Este producto está agotado por ahora. Escríbenos y te contamos cuándo vuelve a estar disponible o te proponemos una alternativa.</p>` : ""}<a class="btn btn-primary btn-lg btn-block" id="cotizar" target="_blank" rel="noopener">${p.agotado ? "Consultar disponibilidad" : "Cotizar por WhatsApp"}</a>
         <p class="nota">Te atenderá un asesor por WhatsApp para acordar el valor, el pago y el día de la visita.</p>
       </aside>
     </div>

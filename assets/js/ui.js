@@ -20,10 +20,10 @@ export function tarjeta(p, i = 0) {
     ? `<img src="${esc(primera.src)}" alt="${esc(p.nombre)}" loading="lazy">`
     : `<div class="product-ph"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONOS[p.categoria] ?? ""}</svg></div>`;
   return `
-    <a class="product" href="producto.html?id=${encodeURIComponent(p.id)}" style="animation-delay:${i * 60}ms">
+    <a class="product${p.agotado ? " agotado" : ""}" href="producto.html?id=${encodeURIComponent(p.id)}" style="animation-delay:${i * 60}ms">
       <div class="product-media">
         ${media}
-        <span class="badge">${esc(nombreCategoria(p.categoria))}</span>
+        <span class="badge">${esc(nombreCategoria(p.categoria))}</span>${p.agotado ? `<span class="badge-agotado">Agotado</span>` : ""}
       </div>
       <div class="product-body">
         <h3>${esc(p.nombre)}</h3>

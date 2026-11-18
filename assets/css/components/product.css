@@ -60,3 +60,15 @@ a.card:hover .card-link { transform: translateX(6px); }
   .detail, .detail-info { grid-template-columns: 1fr; }
   .detail-panel { position: static; }
 }
+
+/* Productos agotados */
+.product.agotado .product-media img, .product.agotado .product-ph { filter: grayscale(.85); opacity: .75; }
+.badge-agotado {
+  position: absolute; top: 12px; right: 12px; padding: .3rem .8rem; border-radius: 999px;
+  font-size: .75rem; font-weight: 600; color: #fff; background: var(--silver-900);
+}
+.aviso-agotado {
+  margin-top: 1.4rem; padding: .8rem 1rem; border-radius: 12px; font-size: .9rem;
+  background: rgba(43, 50, 58, .07); border: 1px solid var(--silver-200);
+}
+.aviso-agotado + .btn-lg { margin-top: 1rem; }

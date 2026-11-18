@@ -7,7 +7,7 @@
     "medidas": { "ancho": "90 cm", "alto": "210 cm" },
     "colores": ["Transparente", "Bronce", "Gris humo"],
     "especificaciones": [["Espesor del vidrio", "10 mm"], ["Tipo de apertura", "Batiente"], ["Herrajes", "Acero inoxidable"], ["Uso", "Interior y exterior"]],
-    "imagenes": []
+    "imagenes": [ { "src": "assets/img/productos/pu-001-frente.jpg", "etiqueta": "Vista frontal" }, { "src": "assets/img/productos/pu-001-lateral.jpg", "etiqueta": "Ángulo lateral" }, { "src": "assets/img/productos/pu-001-detalle.jpg", "etiqueta": "Detalle" }, { "src": "", "etiqueta": "Medidas" } ]
   },
   {
     "id": "PU-002", "categoria": "puertas",
@@ -17,7 +17,7 @@
     "medidas": { "ancho": "80 cm", "alto": "210 cm" },
     "colores": ["Natural", "Negro", "Blanco"],
     "especificaciones": [["Perfil", "Aluminio anodizado"], ["Vidrio", "Laminado"], ["Tipo de apertura", "Batiente"], ["Uso", "Interior y exterior"]],
-    "imagenes": []
+    "imagenes": [ { "src": "assets/img/productos/pu-002-frente.jpg", "etiqueta": "Vista frontal" }, { "src": "assets/img/productos/pu-002-lateral.jpg", "etiqueta": "Ángulo lateral" }, { "src": "assets/img/productos/pu-002-detalle.jpg", "etiqueta": "Detalle" }, { "src": "", "etiqueta": "Medidas" } ]
   },
   {
     "id": "VE-001", "categoria": "ventanas",
@@ -27,7 +27,7 @@
     "medidas": { "ancho": "120 cm", "alto": "100 cm" },
     "colores": ["Natural", "Negro", "Blanco"],
     "especificaciones": [["Espesor del vidrio", "6 mm"], ["Tipo de apertura", "Corrediza"], ["Hojas", "2"], ["Uso", "Interior y exterior"]],
-    "imagenes": []
+    "imagenes": [ { "src": "assets/img/productos/ve-001-frente.jpg", "etiqueta": "Vista frontal" }, { "src": "assets/img/productos/ve-001-lateral.jpg", "etiqueta": "Ángulo lateral" }, { "src": "assets/img/productos/ve-001-detalle.jpg", "etiqueta": "Detalle" }, { "src": "", "etiqueta": "Medidas" } ]
   },
   {
     "id": "VE-002", "categoria": "ventanas",
@@ -37,7 +37,7 @@
     "medidas": { "ancho": "80 cm", "alto": "60 cm" },
     "colores": ["Natural", "Negro", "Blanco"],
     "especificaciones": [["Vidrio", "Laminado"], ["Tipo de apertura", "Proyectante"], ["Uso", "Interior"]],
-    "imagenes": []
+    "imagenes": [ { "src": "assets/img/productos/ve-002-frente.jpg", "etiqueta": "Vista frontal" }, { "src": "assets/img/productos/ve-002-lateral.jpg", "etiqueta": "Ángulo lateral" }, { "src": "assets/img/productos/ve-002-detalle.jpg", "etiqueta": "Detalle" }, { "src": "", "etiqueta": "Medidas" } ]
   },
   {
     "id": "PV-001", "categoria": "puertas-ventanas",
@@ -47,7 +47,7 @@
     "medidas": { "ancho": "200 cm", "alto": "210 cm" },
     "colores": ["Natural", "Negro", "Blanco"],
     "especificaciones": [["Espesor del vidrio", "8 mm"], ["Tipo de apertura", "Corrediza"], ["Hojas", "2"], ["Uso", "Balcones y terrazas"]],
-    "imagenes": []
+    "imagenes": [ { "src": "assets/img/productos/pv-001-frente.jpg", "etiqueta": "Vista frontal" }, { "src": "assets/img/productos/pv-001-lateral.jpg", "etiqueta": "Ángulo lateral" }, { "src": "assets/img/productos/pv-001-detalle.jpg", "etiqueta": "Detalle" }, { "src": "", "etiqueta": "Medidas" } ]
   },
   {
     "id": "PV-002", "categoria": "puertas-ventanas",
@@ -57,7 +57,7 @@
     "medidas": { "ancho": "90 cm", "alto": "210 cm" },
     "colores": ["Natural", "Negro", "Blanco"],
     "especificaciones": [["Espesor del vidrio", "8 mm"], ["Tipo de apertura", "Batiente"], ["Hojas", "1"], ["Uso", "Balcones y patios"]],
-    "imagenes": []
+    "imagenes": [ { "src": "assets/img/productos/pv-002-frente.jpg", "etiqueta": "Vista frontal" }, { "src": "assets/img/productos/pv-002-lateral.jpg", "etiqueta": "Ángulo lateral" }, { "src": "assets/img/productos/pv-002-detalle.jpg", "etiqueta": "Detalle" }, { "src": "", "etiqueta": "Medidas" } ]
   },
   {
     "id": "DB-001", "categoria": "divisiones-bano",
@@ -67,7 +67,7 @@
     "medidas": { "ancho": "120 cm", "alto": "190 cm" },
     "colores": ["Transparente", "Satinado"],
     "especificaciones": [["Espesor del vidrio", "8 mm"], ["Perfilería", "Aluminio"], ["Tipo de apertura", "Corrediza"], ["Uso", "Duchas y bañeras"]],
-    "imagenes": []
+    "imagenes": [ { "src": "assets/img/productos/db-001-frente.jpg", "etiqueta": "Vista frontal" }, { "src": "assets/img/productos/db-001-lateral.jpg", "etiqueta": "Ángulo lateral" }, { "src": "assets/img/productos/db-001-detalle.jpg", "etiqueta": "Detalle" }, { "src": "", "etiqueta": "Medidas" } ]
   },
   {
     "id": "DB-002", "categoria": "divisiones-bano",
@@ -77,7 +77,7 @@
     "medidas": { "ancho": "90 cm", "alto": "190 cm" },
     "colores": ["Transparente", "Satinado"],
     "especificaciones": [["Espesor del vidrio", "10 mm"], ["Herrajes", "Acero inoxidable"], ["Tipo de apertura", "Batiente"], ["Uso", "Duchas"]],
-    "imagenes": []
+    "imagenes": [ { "src": "assets/img/productos/db-002-frente.jpg", "etiqueta": "Vista frontal" }, { "src": "assets/img/productos/db-002-lateral.jpg", "etiqueta": "Ángulo lateral" }, { "src": "assets/img/productos/db-002-detalle.jpg", "etiqueta": "Detalle" }, { "src": "", "etiqueta": "Medidas" } ]
   },
   {
     "id": "DC-001", "categoria": "divisiones-cocina",
@@ -87,7 +87,7 @@
     "medidas": { "ancho": "100 cm", "alto": "210 cm" },
     "colores": ["Transparente", "Satinado"],
     "especificaciones": [["Espesor del vidrio", "8 mm"], ["Instalación", "Panel fijo"], ["Uso", "Cocinas"]],
-    "imagenes": []
+    "imagenes": [ { "src": "assets/img/productos/dc-001-frente.jpg", "etiqueta": "Vista frontal" }, { "src": "assets/img/productos/dc-001-lateral.jpg", "etiqueta": "Ángulo lateral" }, { "src": "assets/img/productos/dc-001-detalle.jpg", "etiqueta": "Detalle" }, { "src": "", "etiqueta": "Medidas" } ]
   },
   {
     "id": "DC-002", "categoria": "divisiones-cocina",
@@ -97,6 +97,6 @@
     "medidas": { "ancho": "150 cm", "alto": "210 cm" },
     "colores": ["Transparente", "Satinado"],
     "especificaciones": [["Perfilería", "Aluminio"], ["Tipo de apertura", "Corrediza"], ["Uso", "Cocinas"]],
-    "imagenes": []
+    "imagenes": [ { "src": "assets/img/productos/dc-002-frente.jpg", "etiqueta": "Vista frontal" }, { "src": "assets/img/productos/dc-002-lateral.jpg", "etiqueta": "Ángulo lateral" }, { "src": "assets/img/productos/dc-002-detalle.jpg", "etiqueta": "Detalle" }, { "src": "", "etiqueta": "Medidas" } ]
   }
 ]
