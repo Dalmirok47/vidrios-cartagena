@@ -65,6 +65,7 @@ export function initProducto() {
   const imgs = imagenesDe(p);
   let actual = 0;
   let color = p.colores?.[0] ?? "";
+  const etiquetaBoton = p.agotado ? "Consultar disponibilidad" : "Cotizar por WhatsApp";
 
   const specs = [
     ["Material", p.material],
@@ -78,6 +79,7 @@ export function initProducto() {
   ].slice(0, 3);
 
   cont.innerHTML = `
+    <a class="volver" href="catalogo.html?cat=${esc(p.categoria)}">‹ ${esc(nombreCategoria(p.categoria))}</a>
     <nav class="breadcrumb" aria-label="Ruta">
       <a href="index.html">Inicio</a><span aria-hidden="true">›</span>
       <a href="catalogo.html">Catálogo</a><span aria-hidden="true">›</span>
@@ -92,7 +94,7 @@ export function initProducto() {
         </div>
         <div class="viewer">
           <button type="button" class="g-nav prev" aria-label="Imagen anterior">‹</button>
-          <div class="viewer-stage" id="visor" title="Clic para ampliar"></div>
+          <div class="viewer-stage" id="visor" title="Toca para ampliar"></div>
           <button type="button" class="g-nav next" aria-label="Imagen siguiente">›</button>
           <span class="viewer-tag" id="visor-etiqueta"></span>
           <span class="viewer-count" id="visor-conteo"></span>
@@ -100,24 +102,28 @@ export function initProducto() {
       </div>
 
       <aside class="detail-panel glass-box">
-        <span class="badge badge-inline">${esc(nombreCategoria(p.categoria))}</span>
-        <h1>${esc(p.nombre)}</h1>
-        <p class="ref">Ref. ${esc(p.id)}</p>
-        <p class="panel-material"><strong>Material:</strong> ${esc(p.material)}</p>
-
-        ${p.colores?.length ? `<div class="panel-block">
-          <h4>Color / acabado</h4>
-          <div class="chips">${p.colores.map((c, i) => `<button type="button" class="chip${i === 0 ? " active" : ""}" data-color="${esc(c)}">${esc(c)}</button>`).join("")}</div>
-        </div>` : ""}
-
-        <div class="panel-block">
-          <h4>Medidas que necesitas</h4>
-          <input class="input-med" id="medidas" type="text" placeholder="Ej: 90 x 210 cm (ancho x alto)" autocomplete="off">
-          <p class="nota">Si no las sabes, el asesor te orienta.</p>
+        <div class="panel-head">
+          <span class="badge badge-inline">${esc(nombreCategoria(p.categoria))}</span>
+          <h1>${esc(p.nombre)}</h1>
+          <p class="ref">Ref. ${esc(p.id)}</p>
         </div>
+        <div class="panel-buy">
+          <p class="panel-material"><strong>Material:</strong> ${esc(p.material)}</p>
 
-        ${p.agotado ? `<p class="aviso-agotado">Este producto está agotado por ahora. Escríbenos y te contamos cuándo vuelve a estar disponible o te proponemos una alternativa.</p>` : ""}<a class="btn btn-primary btn-lg btn-block" id="cotizar" target="_blank" rel="noopener">${p.agotado ? "Consultar disponibilidad" : "Cotizar por WhatsApp"}</a>
-        <p class="nota">Te atenderá un asesor por WhatsApp para acordar el valor, el pago y el día de la visita.</p>
+          ${p.colores?.length ? `<div class="panel-block">
+            <h4>Color / acabado</h4>
+            <div class="chips">${p.colores.map((c, i) => `<button type="button" class="chip${i === 0 ? " active" : ""}" data-color="${esc(c)}">${esc(c)}</button>`).join("")}</div>
+          </div>` : ""}
+
+          <div class="panel-block">
+            <h4>Medidas que necesitas</h4>
+            <input class="input-med" id="medidas" type="text" placeholder="Ej: 90 x 210 cm (ancho x alto)" autocomplete="off">
+            <p class="nota">Si no las sabes, el asesor te orienta.</p>
+          </div>
+
+          ${p.agotado ? `<p class="aviso-agotado">Este producto está agotado por ahora. Escríbenos y te contamos cuándo vuelve a estar disponible o te proponemos una alternativa.</p>` : ""}<a class="btn btn-primary btn-lg btn-block" id="cotizar" target="_blank" rel="noopener">${etiquetaBoton}</a>
+          <p class="nota">Te atenderá un asesor por WhatsApp para acordar el valor, el pago y el día de la visita.</p>
+        </div>
       </aside>
     </div>
 
@@ -137,7 +143,9 @@ export function initProducto() {
     <div class="related">
       <h2>Más productos que te pueden gustar</h2>
       <div class="products">${relacionados.map(tarjeta).join("")}</div>
-    </div>`;
+    </div>
+
+    <div class="cta-bar"><a class="btn btn-primary" id="cotizar-bar" target="_blank" rel="noopener">${etiquetaBoton}</a></div>`;
 
   // ----- Galería -----
   const visor = cont.querySelector("#visor");
@@ -155,6 +163,17 @@ export function initProducto() {
 
   cont.querySelector(".g-nav.prev").addEventListener("click", () => mostrar(actual - 1));
   cont.querySelector(".g-nav.next").addEventListener("click", () => mostrar(actual + 1));
+
+  // Deslizar con el dedo para cambiar de imagen
+  let x0 = null;
+  visor.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+  visor.addEventListener("touchend", (e) => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    x0 = null;
+    if (Math.abs(dx) > 40) mostrar(actual + (dx < 0 ? 1 : -1));
+  }, { passive: true });
+
   thumbs.forEach((t) => {
     t.addEventListener("click", () => mostrar(+t.dataset.i));
     t.addEventListener("mouseenter", () => mostrar(+t.dataset.i));
@@ -194,10 +213,13 @@ export function initProducto() {
     if (e.key === "ArrowRight") moverLb(1);
   });
 
-  // ----- Cotizar por WhatsApp -----
-  const boton = cont.querySelector("#cotizar");
+  // ----- Cotizar por WhatsApp (botón de la caja y botón de la barra fija) -----
+  const botones = [cont.querySelector("#cotizar"), cont.querySelector("#cotizar-bar")];
   const inputMed = cont.querySelector("#medidas");
-  const actualizarEnlace = () => { boton.href = enlaceWhatsApp(mensajeCotizacion(p, color, inputMed.value)); };
+  const actualizarEnlace = () => {
+    const href = enlaceWhatsApp(mensajeCotizacion(p, color, inputMed.value));
+    botones.forEach((b) => { if (b) b.href = href; });
+  };
 
   inputMed.addEventListener("input", actualizarEnlace);
   cont.querySelectorAll(".chip").forEach((ch) =>

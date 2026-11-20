@@ -1,14 +1,223 @@
-﻿@media (max-width: 860px) {
-  section { padding: 4.5rem 0; }
-  .hero-inner, .contact-grid { grid-template-columns: 1fr; }
-  .hero-visual { order: -1; }
-  .pane { width: min(240px, 70%); }
-  .nav-toggle { display: block; }
+﻿/* =====================================================================
+   RESPONSIVE - Vidrios Cartagena
+   Este archivo se importa al final: aquí se ajusta todo para teléfonos.
+   ===================================================================== */
+
+/* ---------- Ajustes generales ---------- */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-x: hidden; overflow-x: clip; }
+a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+.hero { min-height: 100vh; min-height: 100svh; }
+.cta-bar, .volver { display: none; }
+body.menu-open { overflow: hidden; }
+
+form select {
+  -webkit-appearance: none; appearance: none; padding-right: 2.6rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238793a0' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 1rem center; background-size: 18px;
+}
+
+/* Sin efectos "hover" pegados en pantallas táctiles */
+@media (hover: none) {
+  .card:hover, .product:hover, .filter-btn:hover, .chip:hover, .btn-ghost:hover, .wa-float:hover { transform: none; }
+  .card:hover { box-shadow: none; border-color: var(--silver-200); }
+  .product:hover { box-shadow: none; border-color: var(--silver-200); }
+  .product:hover .product-media img, .product:hover .product-ph svg, a.card:hover .card-link { transform: none; }
+  .btn-primary:hover { transform: none; box-shadow: 0 8px 24px rgba(56, 182, 240, .35); }
+  .btn-primary:hover::after { left: -120%; }
+  .btn:active { transform: scale(.98); }
+  .product:active, .card:active { transform: scale(.985); }
+}
+
+/* =====================================================================
+   TABLET Y TELÉFONO (hasta 860px)
+   ===================================================================== */
+@media (max-width: 860px) {
+  section { padding: 3.5rem 0; }
+
+  /* ---------- Barra superior y menú ---------- */
+  .navbar {
+    padding: .7rem 0;
+    transition: padding .35s cubic-bezier(.4, 0, .2, 1), background-color .35s cubic-bezier(.4, 0, .2, 1), box-shadow .35s cubic-bezier(.4, 0, .2, 1);
+  }
+  .navbar.scrolled { padding: .5rem 0; }
+  .logo { position: relative; z-index: 2; font-size: 1.15rem; }
+  .logo img, .navbar.scrolled .logo img { width: 34px; height: 34px; }
+
+  .nav-toggle { display: block; position: relative; z-index: 2; width: 44px; height: 44px; margin-right: -8px; }
+  .nav-toggle span { left: 9px; width: 26px; }
+  .nav-toggle span:nth-child(1) { top: 14px; }
+  .nav-toggle span:nth-child(2) { top: 21px; }
+  .nav-toggle span:nth-child(3) { top: 28px; }
+  .navbar.open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .navbar.open .nav-toggle span:nth-child(2) { opacity: 0; }
+  .navbar.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Con el menú abierto se quita el difuminado de la barra para que el menú ocupe toda la pantalla */
+  .navbar.open, .navbar.scrolled.open {
+    background: transparent; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none;
+  }
   .nav-links {
-    position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 1.2rem; padding: 1.5rem 0;
-    background: var(--glass); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
-    box-shadow: 0 20px 30px rgba(43, 50, 58, .1);
-    opacity: 0; visibility: hidden; transform: translateY(-10px); transition: var(--transition);
+    position: fixed; inset: 0; z-index: 1;
+    flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 0;
+    padding: 5.5rem 1.25rem calc(2rem + env(safe-area-inset-bottom));
+    overflow-y: auto;
+    background: linear-gradient(170deg, #ffffff 0%, var(--silver-200) 65%, #cdeefb 100%);
+    box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none;
+    opacity: 0; visibility: hidden; transform: translateY(-12px);
   }
   .navbar.open .nav-links { opacity: 1; visibility: visible; transform: none; }
+  .nav-links a:not(.btn) { display: block; padding: 1rem .25rem; font-size: 1.25rem; border-bottom: 1px solid rgba(135, 147, 160, .25); }
+  .nav-links a:not(.btn)::after { display: none; }
+  .nav-links .btn { margin-top: 1.5rem; padding: 1rem; font-size: 1.05rem; text-align: center; }
+
+  /* ---------- Inicio: hero ---------- */
+  .hero { min-height: auto; align-items: flex-start; padding: 6.25rem 0 3rem; }
+  .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .hero h1 { font-size: clamp(2rem, 9.5vw, 2.7rem); }
+  .hero-text p { font-size: 1rem; margin-bottom: 1.5rem; }
+  .hero-actions { flex-direction: column; gap: .75rem; }
+  .hero-actions .btn { width: 100%; text-align: center; }
+  .hero-visual { order: 0; }
+  .pane-logo { width: min(240px, 68%); padding: 1.2rem; border-radius: 20px; }
+  .blob { animation: none; filter: blur(60px); }
+  .blob-1 { width: 260px; height: 260px; }
+  .blob-2 { width: 220px; height: 220px; }
+
+  /* ---------- Inicio: secciones ---------- */
+  h2 { font-size: clamp(1.6rem, 7vw, 2rem); }
+  .section-head { margin-bottom: 1.75rem; }
+  .section-head p { font-size: .95rem; }
+
+  .cards { gap: .75rem; }
+  a.card { display: grid; grid-template-columns: 52px 1fr; column-gap: 1rem; align-items: center; padding: 1rem 1.1rem; }
+  a.card .icon { grid-row: 1 / span 3; width: 52px; height: 52px; margin: 0; }
+  a.card h3 { margin: 0; font-size: 1.05rem; }
+  a.card p { margin: 0; font-size: .85rem; line-height: 1.4; }
+  a.card .card-link { margin-top: .15rem; font-size: .85rem; }
+  .center-cta { margin-top: 1.5rem; }
+  .center-cta .btn { width: 100%; text-align: center; }
+
+  .features { gap: .75rem; }
+  .glass-box { padding: 1.4rem; }
+  .contact-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  form input, form select, form textarea { font-size: 16px; padding: .85rem 1rem; }
+  form .btn { width: 100%; text-align: center; }
+
+  .footer { padding: 1.75rem 0; text-align: center; }
+  .footer-inner { flex-direction: column; align-items: center; gap: .25rem; }
+
+  /* ---------- Botón flotante de WhatsApp ---------- */
+  .wa-float {
+    right: 16px; bottom: calc(16px + env(safe-area-inset-bottom));
+    width: 56px; height: 56px; padding: 0; font-size: 0;
+    background: #25d366 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7.9 20A9 9 0 1 0 4 16.1L2 22Z'/%3E%3C/svg%3E") center / 28px no-repeat;
+  }
+  body[data-page="producto"] .wa-float { display: none; }
+
+  /* ---------- Catálogo ---------- */
+  .page-top { padding: 5.25rem 0 2.5rem; }
+  .page-top .section-head { margin-bottom: 1rem; }
+  .page-top .section-head h1 { font-size: 1.8rem; margin-bottom: .4rem; }
+  .page-top .section-head p { font-size: .9rem; }
+
+  .filters {
+    position: sticky; top: 50px; z-index: 40;
+    flex-wrap: nowrap; justify-content: flex-start; gap: .5rem;
+    overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x proximity; scrollbar-width: none;
+    margin: 0 -4vw 1rem; padding: .55rem 4vw;
+    background: rgba(238, 241, 244, .9); border-bottom: 1px solid rgba(135, 147, 160, .15);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  }
+  .filters::-webkit-scrollbar { display: none; }
+  .filter-btn { flex: 0 0 auto; min-height: 44px; padding: .5rem 1.1rem; font-size: .92rem; white-space: nowrap; scroll-snap-align: center; }
+
+  .products { grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 1rem; }
+  .product { min-width: 0; }
+
+  /* ---------- Ficha del producto ---------- */
+  .breadcrumb { display: none; }
+  .volver { display: inline-flex; align-items: center; min-height: 44px; margin-bottom: .25rem; font-weight: 500; color: var(--sky-700); }
+
+  .detail { display: flex; flex-direction: column; align-items: stretch; gap: 1rem; }
+  .detail-panel { display: contents; }
+  .panel-head { order: 0; }
+  .gallery { order: 1; }
+  .panel-buy {
+    order: 2; padding: 1.25rem; border-radius: var(--radius);
+    background: var(--glass); border: 1px solid rgba(255, 255, 255, .8); box-shadow: 0 10px 30px rgba(43, 50, 58, .08);
+    -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur);
+  }
+  .panel-head h1 { font-size: 1.5rem; margin-bottom: .2rem; }
+  .panel-head .ref { margin-bottom: 0; }
+  .panel-buy #cotizar { display: none; }
+  .chip { min-height: 44px; padding: .5rem 1.1rem; }
+  .input-med { font-size: 16px; }
+
+  .viewer { border-radius: 14px; touch-action: pan-y; }
+  .g-nav { width: 36px; height: 36px; font-size: 1.3rem; }
+  .g-nav.prev { left: 8px; }
+  .g-nav.next { right: 8px; }
+  .viewer-tag, .viewer-count { bottom: 8px; padding: .2rem .65rem; font-size: .7rem; }
+  .thumbs { gap: .5rem; scrollbar-width: none; }
+  .thumbs::-webkit-scrollbar { display: none; }
+  .thumb { width: 64px; border-radius: 10px; }
+
+  .lightbox { padding: 0; }
+  .lb-stage { width: 100%; border-radius: 0; }
+  .lb-close { top: calc(12px + env(safe-area-inset-top)); right: 12px; }
+  .lb-prev { left: 8px; }
+  .lb-next { right: 8px; }
+
+  /* Barra fija con el botón de cotizar */
+  .cta-bar {
+    display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 95;
+    padding: .7rem 1rem calc(.7rem + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, .92); border-top: 1px solid var(--silver-200); box-shadow: 0 -8px 24px rgba(43, 50, 58, .08);
+    -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  }
+  .cta-bar .btn { display: block; width: 100%; padding: 1rem; font-size: 1.05rem; text-align: center; }
+  body[data-page="producto"] .footer { padding-bottom: calc(6rem + env(safe-area-inset-bottom)); }
+
+  .detail-info { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem; }
+  .detail-info h2 { font-size: 1.25rem; margin-bottom: .6rem; }
+  .specs { font-size: .9rem; }
+  .specs th, .specs td { padding: .65rem .8rem; }
+  .specs th { width: 38%; }
+
+  .related { margin-top: 2.25rem; }
+  .related h2 { font-size: 1.25rem; margin-bottom: 1rem; }
+  .related .products {
+    display: flex; gap: .75rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+    margin: 0 -4vw; padding: .25rem 4vw 1rem;
+  }
+  .related .products::-webkit-scrollbar { display: none; }
+  .related .product { flex: 0 0 62%; max-width: 260px; scroll-snap-align: start; }
+}
+
+/* =====================================================================
+   TELÉFONOS (hasta 640px): catálogo en 2 columnas, tarjetas compactas
+   ===================================================================== */
+@media (max-width: 640px) {
+  .products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+  .product { border-radius: 14px; }
+  .product-body { padding: .75rem .8rem .9rem; gap: .25rem; }
+  .product h3 { margin: 0; font-size: .95rem; line-height: 1.25; }
+  .product-desc { display: none; }
+  .product-meta { margin: .15rem 0 0; gap: 0; font-size: .78rem; }
+  .product-meta li:first-child { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .product-meta li:nth-child(2) { display: none; }
+  .product .btn { display: none; }
+  .badge { top: 8px; left: 8px; padding: .2rem .55rem; font-size: .65rem; }
+  .badge-agotado { top: auto; bottom: 8px; right: 8px; padding: .2rem .55rem; font-size: .65rem; }
+}
+
+/* =====================================================================
+   TELÉFONOS PEQUEÑOS (hasta 360px)
+   ===================================================================== */
+@media (max-width: 360px) {
+  .hero h1 { font-size: 1.9rem; }
+  .products { gap: .6rem; }
+  .product h3 { font-size: .88rem; }
+  .filter-btn { padding: .5rem .95rem; font-size: .88rem; }
 }

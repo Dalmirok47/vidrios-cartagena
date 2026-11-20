@@ -16,7 +16,15 @@ export function initCatalogo() {
     (c) => `<button type="button" class="filter-btn" data-cat="${c.id}" aria-pressed="false">${esc(c.nombre)}</button>`
   ).join("");
 
-  function pintar() {
+  // En el teléfono los filtros se desplazan de lado: centra el que está activo
+  function centrar(boton, suave) {
+    if (!boton || filtros.scrollWidth <= filtros.clientWidth) return;
+    const r = boton.getBoundingClientRect();
+    const f = filtros.getBoundingClientRect();
+    filtros.scrollBy({ left: r.left - f.left - (f.width - r.width) / 2, behavior: suave ? "smooth" : "auto" });
+  }
+
+  function pintar(suave) {
     const items = activa === "todos" ? PRODUCTOS : PRODUCTOS.filter((p) => p.categoria === activa);
     lista.innerHTML = items.map(tarjeta).join("");
     vacio.hidden = items.length > 0;
@@ -24,6 +32,7 @@ export function initCatalogo() {
       const on = b.dataset.cat === activa;
       b.classList.toggle("active", on);
       b.setAttribute("aria-pressed", on);
+      if (on) centrar(b, suave);
     });
   }
 
@@ -37,8 +46,8 @@ export function initCatalogo() {
       else url.searchParams.set("cat", activa);
       history.replaceState(null, "", url);
     } catch (_) { /* sin historial, no pasa nada */ }
-    pintar();
+    pintar(true);
   });
 
-  pintar();
+  pintar(false);
 }
